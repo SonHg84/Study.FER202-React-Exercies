@@ -4,12 +4,13 @@ import './index.css';
 import Exercise from './Slot1/Ex4/Exercise';
 import ListOfRetail from './Slot1/Ex4/UsingES6&JSX'
 import reportWebVitals from './reportWebVitals';
-
+import MyComponent from './test'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
   <Exercise/>
   <ListOfRetail/>
+  <MyComponent/>
   </>
 );
 

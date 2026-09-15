@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1.Create website with bootstrap 5 as image below</title>
+
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <style>
+        .grid-box {
+            border: 1px solid #888;
+            background-color: #d3d3d3;
+            padding: 10px 15px;
+        }
+
+        .header-box {
+            padding: 40px;
+            background-color: #e8ecee;
+            margin-bottom: 10px;
+
+        }
+
+        .footer-box {
+            background-color: #d0c4c4;
+            margin-top: 10px;
+        }
+
+        .footer-box h2,
+        .header-box h2 {
+            font-size: 40px;
+            font-weight: 400;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header-box">
+        <h2>Let's test the grid!</h2>
+    </div>
+    
+
+    <div class="container">
+        <div class="row g-0">
+            <div class="col-8 grid-box">First col</div>
+            <div class="col-4 grid-box">Second col</div>
+        </div>
+
+        <div class="row g-0">
+            <div class="col-4 grid-box">col</div>
+            <div class="col-4 grid-box">col</div>
+            <div class="col-4 grid-box">col</div>
+        </div>
+
+        <div class="row g-0">
+            <div class="col-3 grid-box">col</div>
+            <div class="col-3 grid-box">col</div>
+            <div class="col-3 grid-box">col</div>
+            <div class="col-3 grid-box">col</div>
+        </div>
+    </div>
+
+    <div class="footer-box text-center">
+        <h2>Created by ABC!</h2>
+    </div>
+
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

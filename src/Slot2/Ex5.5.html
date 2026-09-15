@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1.Create website with bootstrap 5 as image below</title>
+
+    <link
+      rel="stylesheet"
+      href="/node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      .header-box {
+        background-color: #eacdad;
+        padding: 10px 200px;
+      }
+
+      .text-orange {
+        color: #f16d1d;
+      }
+
+      .banner-container {
+        background-color: #f16d1d;
+        padding: 10px 150px;
+      }
+
+      .banner-image {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        object-fit: cover;
+      }
+
+      .bread-crumb {
+        background-color: #dfc8c8;
+        width: fit-content;
+        padding: 5px;
+        margin-left: 200px;
+      }
+
+      .student-list {
+        text-align: center;
+        padding: 5px 160px;
+      }
+
+      .student-list img {
+        width: 100%;
+        display: block;
+        margin: 0 auto;
+        object-fit: cover;
+      }
+
+      /* Màu nền cam cho toàn bộ footer */
+      .custom-footer {
+        background-color: #e37637; /* Mã màu cam trích xuất từ ảnh */
+        font-family: Arial, sans-serif;
+        padding: 20px 60px;
+      }
+
+      /* Định dạng link email màu xanh */
+      .custom-footer .email-link {
+        color: #0d6efd;
+        text-decoration: none;
+      }
+
+      .custom-footer .email-link:hover {
+        text-decoration: underline;
+      }
+
+      /* Định dạng kích thước và khoảng cách cho các icon mạng xã hội */
+      .social-icons a {
+        color: #212529; /* Màu đen xám cho icon */
+        font-size: 20px; /* Tăng kích thước icon */
+        margin-left: 20px; /* Tạo khoảng cách giữa các icon */
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .social-icons a:hover {
+        color: #ffffff; /* Đổi màu trắng khi di chuột qua */
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="header-box d-flex justify-content-between align-items-center">
+      <div class="header-left d-flex">
+        <ul class="nav align-items-center">
+          <li class="nav-item">
+            <img
+              src="/public/images/Logo-FPT.png"
+              style="width: 200px; height: auto"
+              alt
+            />
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#f16d1d"
+              >
+                <path
+                  d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"
+                />
+              </svg>
+              <span class="text-orange">Trang chủ</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#f16d1d"
+              >
+                <path
+                  d="M423.5-703.5Q400-727 400-760t23.5-56.5Q447-840 480-840t56.5 23.5Q560-793 560-760t-23.5 56.5Q513-680 480-680t-56.5-23.5ZM420-120v-480h120v480H420Z"
+                />
+              </svg>
+              <span class="text-orange">Ngành học</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#f16d1d"
+              >
+                <path
+                  d="m298-446 141-141-42-43-100 100-54-54-42 42 97 96Zm-78 126h180v-60H220v60Zm220 0h320v-22q0-45-44-71.5T600-440q-72 0-116 26.5T440-342v22Zm216.5-183.5Q680-527 680-560t-23.5-56.5Q633-640 600-640t-56.5 23.5Q520-593 520-560t23.5 56.5Q567-480 600-480t56.5-23.5ZM160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm0-80h640v-480H160v480Zm0 0v-480 480Z"
+                />
+              </svg>
+              <span class="text-orange">Tuyển sinh</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#f16d1d"
+              >
+                <path
+                  d="M280-600v-80h560v80H280Zm0 160v-80h560v80H280Zm0 160v-80h560v80H280ZM160-600q-17 0-28.5-11.5T120-640q0-17 11.5-28.5T160-680q17 0 28.5 11.5T200-640q0 17-11.5 28.5T160-600Zm0 160q-17 0-28.5-11.5T120-480q0-17 11.5-28.5T160-520q17 0 28.5 11.5T200-480q0 17-11.5 28.5T160-440Zm0 160q-17 0-28.5-11.5T120-320q0-17 11.5-28.5T160-360q17 0 28.5 11.5T200-320q0 17-11.5 28.5T160-280Z"
+                />
+              </svg>
+              <span class="text-orange">Sinh viên</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="header-right">
+        Search:
+        <input type="text" />
+      </div>
+    </div>
+
+    <div class="banner-container">
+      <img
+        class="banner-image"
+        src="/public/images/background-fpt-student.png"
+        alt
+      />
+    </div>
+
+    <div class="bread-crumb">
+      <span class="text-orange">Home</span><span>/ Students</span>
+    </div>
+
+    <div class="student-list mb-5">
+      <div class="row">
+        <div class="col-12 mb-5">
+          <h2>Student List</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <div class="border border-dark overflow-hidden h-100">
+            <img src="/public/images/student4.png" class="w-100 d-block" alt />
+
+            <div class="p-3">
+              <p class="ma-sinh-vien text-center fw-bold mb-3">DE160182</p>
+
+              <div class="infor-student d-flex justify-content-between mb-3">
+                <p class="mb-0">Nguyễn Hữu Quốc Anh</p>
+                <p class="mb-0">DaNang</p>
+              </div>
+
+              <div class="status-student d-flex justify-content-around mb-4">
+                <label>
+                  <input
+                    type="radio"
+                    name="attendance1"
+                    value="Absent"
+                    class="me-1"
+                  />
+                  Absent
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    name="attendance1"
+                    value="Present"
+                    class="me-1"
+                  />
+                  Present
+                </label>
+              </div>
+
+              <div class="text-center">
+                <!-- Nút Submit -->
+                <button
+                  class="btn text-white px-4"
+                  style="background-color: #f28531"
+                >
+                  Submit
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="border border-dark overflow-hidden h-100">
+            <img src="/public/images/student2.png" class="w-100 d-block" alt />
+
+            <div class="p-3">
+              <p class="ma-sinh-vien text-center fw-bold mb-3">DE160182</p>
+
+              <div class="infor-student d-flex justify-content-between mb-3">
+                <p class="mb-0">Nguyễn Hữu Quốc Anh</p>
+                <p class="mb-0">DaNang</p>
+              </div>
+
+              <div class="status-student d-flex justify-content-around mb-4">
+                <label>
+                  <input
+                    type="radio"
+                    name="attendance1"
+                    value="Absent"
+                    class="me-1"
+                  />
+                  Absent
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    name="attendance1"
+                    value="Present"
+                    class="me-1"
+                  />
+                  Present
+                </label>
+              </div>
+
+              <div class="text-center">
+                <!-- Nút Submit -->
+                <button
+                  class="btn text-white px-4"
+                  style="background-color: #f28531"
+                >
+                  Submit
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <div class="border border-dark overflow-hidden h-100">
+            <img src="/public/images/student3.png" class="w-100 d-block" alt />
+
+            <div class="p-3">
+              <p class="ma-sinh-vien text-center fw-bold mb-3">DE160182</p>
+
+              <div class="infor-student d-flex justify-content-between mb-3">
+                <p class="mb-0">Nguyễn Hữu Quốc Anh</p>
+                <p class="mb-0">DaNang</p>
+              </div>
+
+              <div class="status-student d-flex justify-content-around mb-4">
+                <label>
+                  <input
+                    type="radio"
+                    name="attendance1"
+                    value="Absent"
+                    class="me-1"
+                  />
+                  Absent
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    name="attendance1"
+                    value="Present"
+                    class="me-1"
+                  />
+                  Present
+                </label>
+              </div>
+
+              <div class="text-center">
+                <!-- Nút Submit -->
+                <button
+                  class="btn text-white px-4"
+                  style="background-color: #f28531"
+                >
+                  Submit
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="border border-dark overflow-hidden h-100">
+            <img src="/public/images/student4.png" class="w-100 d-block" alt />
+
+            <div class="p-3">
+              <p class="ma-sinh-vien text-center fw-bold mb-3">DE160182</p>
+
+              <div class="infor-student d-flex justify-content-between mb-3">
+                <p class="mb-0">Nguyễn Hữu Quốc Anh</p>
+                <p class="mb-0">DaNang</p>
+              </div>
+
+              <div class="status-student d-flex justify-content-around mb-4">
+                <label>
+                  <input
+                    type="radio"
+                    name="attendance1"
+                    value="Absent"
+                    class="me-1"
+                  />
+                  Absent
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    name="attendance1"
+                    value="Present"
+                    class="me-1"
+                  />
+                  Present
+                </label>
+              </div>
+
+              <div class="text-center">
+                <!-- Nút Submit -->
+                <button
+                  class="btn text-white px-4"
+                  style="background-color: #f28531"
+                >
+                  Submit
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cần đảm bảo dự án đã link thư viện FontAwesome ở thẻ <head> để hiện icon -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> -->
+
+    <footer class="custom-footer">
+      <div class="container ">
+        <div class="row align-items-center">
+          <!-- Cột trái: Thông tin địa chỉ -->
+          <div class="col-md-6 mb-4 mb-md-0 text-dark">
+            <h5 class="fw-bold mb-3">Our Address</h5>
+            <p class="mb-1">Khu đô thị FPT Đà Nẵng</p>
+            <p class="mb-1">
+              <i class="fa-solid fa-phone me-2"></i>+84023111111
+            </p>
+            <p class="mb-1">
+              <i class="fa-solid fa-fax me-2"></i>+852 8765 4321
+            </p>
+            <p class="mb-0">
+              <i class="fa-solid fa-envelope me-2"></i>
+              <a href="mailto:fptudn@fpt.edu.vn" class="email-link"
+                >fptudn@fpt.edu.vn</a
+              >
+            </p>
+          </div>
+
+          <!-- Cột phải: Icon mạng xã hội -->
+          <div
+            class="col-md-6 d-flex justify-content-md-end justify-content-start social-icons"
+          >
+            <a href="#"><i class="fa-brands fa-google-plus-g"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#"><i class="fa-regular fa-envelope"></i></a>
+          </div>
+        </div>
+
+        <!-- Dòng Copyright căn giữa -->
+        <div class="row mt-4">
+          <div class="col-12 text-center text-dark">
+            <p class="mb-0">&copy; Copyright 2023</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
