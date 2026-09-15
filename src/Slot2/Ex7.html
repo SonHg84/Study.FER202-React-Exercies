@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1.Create website with bootstrap 5 as image below</title>
+
+    <link
+      rel="stylesheet"
+      href="/node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <style>
+      .custom-card-text {
+        font-size: 0.85rem;
+        color: #000;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container mt-5">
+      <!-- Outer container for the exercise -->
+      <div class="border">
+        <h5 class="mb-3">Cards Columns</h5>
+
+        <div class="row g-3">
+          <!-- First Card (Blue / Primary) -->
+          <div class="col-md-4">
+            <div class="card bg-primary border-0 rounded-0">
+              <div class="card-body p-2 text-center">
+                <img
+                  src="/public/images/toyota-ex7.png"
+                  class="card-img-top card-img-custom mb-2 rounded-0"
+                  alt="Toyota Corolla Cross"
+                />
+                <p class="card-text custom-card-text">
+                  Some text inside the first card
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Second Card (Yellow / Warning) -->
+          <div class="col-md-4">
+            <div class="card bg-warning border-0 rounded-0">
+              <div class="card-body p-2 text-center">
+                <img
+                  src="/public/images/toyota-ex7.png"
+                  class="card-img-top card-img-custom mb-2 rounded-0"
+                  alt="Toyota Corolla Cross"
+                />
+                <p class="card-text custom-card-text">
+                  Some text inside the first card
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Third Card (Red / Danger) -->
+          <div class="col-md-4">
+            <div class="card bg-danger border-0 rounded-0">
+              <div class="card-body p-2 text-center">
+                <img
+                  src="/public/images/toyota-ex7.png"
+                  class="card-img-top card-img-custom mb-2 rounded-0"
+                  alt="Toyota Corolla Cross"
+                />
+                <p class="card-text custom-card-text">
+                  Some text inside the first card
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

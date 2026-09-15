@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1.Create website with bootstrap 5 as image below</title>
+
+    <link
+      rel="stylesheet"
+      href="/node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <style>
+      /* Tùy chỉnh màu sắc và định dạng giá tiền */
+      .old-price {
+        text-decoration: line-through;
+        color: #6c757d;
+        font-size: 0.85rem;
+      }
+      .new-price {
+        color: #fd7e14;
+        font-weight: bold;
+        font-size: 0.95rem;
+      }
+      /* CSS cho dải băng "Sale" chéo góc */
+      .ribbon-wrapper {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100px;
+        height: 100px;
+        overflow: hidden;
+        z-index: 1;
+      }
+      .ribbon {
+        position: absolute;
+        top: 15px;
+        right: -30px;
+        background-color: #fd7e14;
+        color: white;
+        padding: 5px 40px;
+        transform: rotate(45deg);
+        font-weight: bold;
+        font-size: 0.85rem;
+        text-align: center;
+      }
+      /* Tùy chỉnh nút giỏ hàng */
+      .btn-cart {
+        background-color: #4a76a8;
+        color: white;
+        border-radius: 0;
+      }
+      .btn-cart:hover {
+        background-color: #3b5f87;
+        color: white;
+      }
+      .btn-detail {
+        border-radius: 0;
+        border-color: #ced4da;
+        color: #6c757d;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- 1. Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-muted" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-muted" href="#">Dropdown</a>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <input
+              class="form-control me-2 rounded-0"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-primary rounded-0" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <!-- 2. Hero Banner / Carousel Slider Placeholder -->
+    <div class="container-fluid p-0 mb-5">
+      <div
+        class="bg-secondary text-white d-flex justify-content-center align-items-center position-relative"
+        style="height: 400px; width: 100%"
+      >
+        <!-- Các nút điều hướng mô phỏng -->
+        <i
+          class="bi bi-chevron-left position-absolute start-0 ms-4 fs-1 text-light opacity-50"
+        ></i>
+        <h1 class="display-3 opacity-50">1920 x 530</h1>
+        <i
+          class="bi bi-chevron-right position-absolute end-0 me-4 fs-1 text-light opacity-50"
+        ></i>
+
+        <!-- Các chỉ thị (indicators) mô phỏng -->
+        <div class="position-absolute bottom-0 mb-3 d-flex gap-2">
+          <div style="width: 30px; height: 3px; background-color: white"></div>
+          <div
+            style="
+              width: 30px;
+              height: 3px;
+              background-color: rgba(255, 255, 255, 0.5);
+            "
+          ></div>
+          <div
+            style="
+              width: 30px;
+              height: 3px;
+              background-color: rgba(255, 255, 255, 0.5);
+            "
+          ></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Product Section -->
+    <div class="container mb-5">
+      <div class="mb-4">
+        <h3 class="text-secondary fw-normal mb-1">NEW PRODUCT</h3>
+        <p class="text-info small">List product description</p>
+      </div>
+
+      <!-- Bắt đầu hệ thống Grid -->
+      <div class="row g-4">
+        <!-- Thẻ sản phẩm 1 -->
+        <div class="col-12 col-sm-6 col-md-3">
+          <div class="card h-100 rounded-0 border-light shadow-sm">
+            <img
+              src="https://placehold.co/280x280/cccccc/777777?text=280+x+280"
+              class="card-img-top rounded-0"
+              alt="Product 1"
+            />
+            <div class="card-body p-3">
+              <h6 class="card-title text-secondary">Product</h6>
+              <div
+                class="d-flex justify-content-between align-items-center mb-3"
+              >
+                <span class="old-price">100.000 vnd</span>
+                <span class="new-price">80.000 vnd</span>
+              </div>
+              <div class="d-flex">
+                <button class="btn btn-cart px-3">
+                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M223.5-103.5Q200-127 200-160t23.5-56.5Q247-240 280-240t56.5 23.5Q360-193 360-160t-23.5 56.5Q313-80 280-80t-56.5-23.5Zm400 0Q600-127 600-160t23.5-56.5Q647-240 680-240t56.5 23.5Q760-193 760-160t-23.5 56.5Q713-80 680-80t-56.5-23.5ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z"/></svg>
+                </button>
+                <button
+                  class="btn btn-outline-secondary btn-detail flex-grow-1 ms-1"
+                >
+                  Xem chi tiết
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Thẻ sản phẩm 2 -->
+        <div class="col-12 col-sm-6 col-md-3">
+          <div class="card h-100 rounded-0 border-light shadow-sm">
+            <img
+              src="https://placehold.co/280x280/cccccc/777777?text=280+x+280"
+              class="card-img-top rounded-0"
+              alt="Product 2"
+            />
+            <div class="card-body p-3">
+              <h6 class="card-title text-secondary">Product</h6>
+              <div
+                class="d-flex justify-content-between align-items-center mb-3"
+              >
+                <span class="old-price">100.000 vnd</span>
+                <span class="new-price">80.000 vnd</span>
+              </div>
+              <div class="d-flex">
+                <button class="btn btn-cart px-3">
+<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M223.5-103.5Q200-127 200-160t23.5-56.5Q247-240 280-240t56.5 23.5Q360-193 360-160t-23.5 56.5Q313-80 280-80t-56.5-23.5Zm400 0Q600-127 600-160t23.5-56.5Q647-240 680-240t56.5 23.5Q760-193 760-160t-23.5 56.5Q713-80 680-80t-56.5-23.5ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z"/></svg>                </button>
+                <button
+                  class="btn btn-outline-secondary btn-detail flex-grow-1 ms-1"
+                >
+                  Xem chi tiết
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Thẻ sản phẩm 3 -->
+        <div class="col-12 col-sm-6 col-md-3">
+          <div class="card h-100 rounded-0 border-light shadow-sm">
+            <img
+              src="https://placehold.co/280x280/cccccc/777777?text=280+x+280"
+              class="card-img-top rounded-0"
+              alt="Product 3"
+            />
+            <div class="card-body p-3">
+              <h6 class="card-title text-secondary">Product</h6>
+              <div
+                class="d-flex justify-content-between align-items-center mb-3"
+              >
+                <span class="old-price">100.000 vnd</span>
+                <span class="new-price">80.000 vnd</span>
+              </div>
+              <div class="d-flex">
+                <button class="btn btn-cart px-3">
+<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M223.5-103.5Q200-127 200-160t23.5-56.5Q247-240 280-240t56.5 23.5Q360-193 360-160t-23.5 56.5Q313-80 280-80t-56.5-23.5Zm400 0Q600-127 600-160t23.5-56.5Q647-240 680-240t56.5 23.5Q760-193 760-160t-23.5 56.5Q713-80 680-80t-56.5-23.5ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z"/></svg>                </button>
+                <button
+                  class="btn btn-outline-secondary btn-detail flex-grow-1 ms-1"
+                >
+                  Xem chi tiết
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Thẻ sản phẩm 4 (Có nhãn SALE) -->
+        <div class="col-12 col-sm-6 col-md-3">
+          <div
+            class="card h-100 rounded-0 border-light shadow-sm position-relative"
+          >
+            <!-- Nhãn Sale góc phải -->
+            <div class="ribbon-wrapper">
+              <div class="ribbon">Sale</div>
+            </div>
+
+            <img
+              src="https://placehold.co/280x280/cccccc/777777?text=280+x+280"
+              class="card-img-top rounded-0"
+              alt="Product 4"
+            />
+            <div class="card-body p-3">
+              <h6 class="card-title text-secondary">Product</h6>
+              <div
+                class="d-flex justify-content-between align-items-center mb-3"
+              >
+                <span class="old-price">100.000 vnd</span>
+                <span class="new-price">80.000 vnd</span>
+              </div>
+              <div class="d-flex">
+                <button class="btn btn-cart px-3">
+<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M223.5-103.5Q200-127 200-160t23.5-56.5Q247-240 280-240t56.5 23.5Q360-193 360-160t-23.5 56.5Q313-80 280-80t-56.5-23.5Zm400 0Q600-127 600-160t23.5-56.5Q647-240 680-240t56.5 23.5Q760-193 760-160t-23.5 56.5Q713-80 680-80t-56.5-23.5ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z"/></svg>                </button>
+                <button
+                  class="btn btn-outline-secondary btn-detail flex-grow-1 ms-1"
+                >
+                  Xem chi tiết
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Kết thúc hàng Grid -->
+    </div>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

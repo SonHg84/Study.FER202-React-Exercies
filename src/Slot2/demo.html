@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mô phỏng Bảng EAV Nâng cao</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        h2, h3 {
+            color: #2c3e50;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #27ae60;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .action-panel {
+            background: #e8f6f3;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 5px solid #1abc9c;
+        }
+        button {
+            background-color: #2980b9;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        button:hover {
+            background-color: #3498db;
+        }
+        .result-box {
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Mô phỏng bảng dữ liệu: product_features</h2>
+    <p>Bảng dưới đây lưu trữ các đặc tính linh hoạt của rau củ quả. Chú ý cách tách biệt cột <strong>Giá trị chữ</strong> và <strong>Giá trị số</strong>.</p>
+    
+    <!-- Bảng hiển thị dữ liệu -->
+    <table id="dataTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Sản phẩm (product_id)</th>
+                <th>Tên thuộc tính (feature_name)</th>
+                <th>Giá trị chữ (value_string)</th>
+                <th>Giá trị số (value_numeric)</th>
+                <th>Đơn vị (unit)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Dữ liệu sẽ được render bằng JavaScript -->
+        </tbody>
+    </table>
+
+    <!-- Khu vực tính toán -->
+    <div class="action-panel">
+        <h3>Tính toán từ cơ sở dữ liệu</h3>
+        <p>Yêu cầu: Tính tổng trọng lượng của tất cả các sản phẩm hiện có.</p>
+        <button onclick="tinhTongTrongLuong()">Thực thi truy vấn tính tổng</button>
+        <div id="resultOutput" class="result-box"></div>
+    </div>
+</div>
+
+<script>
+    // 1. Khởi tạo mảng mô phỏng dữ liệu từ Database
+    const productFeatures = [
+        { id: 1, product: "Cà chua Cherry (205)", feature_name: "Nguồn gốc", value_string: "Đà Lạt", value_numeric: null, unit: "" },
+        { id: 2, product: "Cà chua Cherry (205)", feature_name: "Trọng lượng", value_string: null, value_numeric: 0.5, unit: "kg" },
+        { id: 3, product: "Sầu riêng Ri6 (206)", feature_name: "Nguồn gốc", value_string: "Bến Tre", value_numeric: null, unit: "" },
+        { id: 4, product: "Sầu riêng Ri6 (206)", feature_name: "Trọng lượng", value_string: null, value_numeric: 2.5, unit: "kg" },
+        { id: 5, product: "Sầu riêng Ri6 (206)", feature_name: "Độ ngọt (Brix)", value_string: null, value_numeric: 15, unit: "%" },
+        { id: 6, product: "Bắp cải tím (207)", feature_name: "Trọng lượng", value_string: null, value_numeric: 1.2, unit: "kg" }
+    ];
+
+    // 2. Hàm hiển thị dữ liệu ra bảng HTML
+    function renderTable() {
+        const tbody = document.querySelector("#dataTable tbody");
+        tbody.innerHTML = ""; 
+
+        productFeatures.forEach(row => {
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
+                <td>${row.id}</td>
+                <td>${row.product}</td>
+                <td><strong>${row.feature_name}</strong></td>
+                <td>${row.value_string !== null ? row.value_string : "<em>NULL</em>"}</td>
+                <td style="color:blue; font-weight:bold;">${row.value_numeric !== null ? row.value_numeric : "<em>NULL</em>"}</td>
+                <td>${row.unit}</td>
+            `;
+            tbody.appendChild(tr);
+        });
+    }
+
+    // 3. Hàm mô phỏng câu lệnh SQL SELECT SUM(value_numeric)
+    function tinhTongTrongLuong() {
+        let tongTrongLuong = 0;
+
+        // Quá trình duyệt mảng này mô phỏng cách hệ quản trị CSDL tìm kiếm và cộng dồn
+        for (let i = 0; i < productFeatures.length; i++) {
+            let row = productFeatures[i];
+            
+            // Điều kiện lọc (WHERE feature_name = 'Trọng lượng')
+            if (row.feature_name === "Trọng lượng" && row.value_numeric !== null) {
+                tongTrongLuong += row.value_numeric; 
+            }
+        }
+
+        // Hiển thị kết quả ra màn hình
+        const resultBox = document.getElementById("resultOutput");
+        resultBox.innerHTML = `Kết quả: Tổng trọng lượng là ${tongTrongLuong.toFixed(2)} kg.`;
+    }
+
+    // Chạy hàm hiển thị bảng ngay khi tải trang
+    renderTable();
+</script>
+
+</body>
+</html>
