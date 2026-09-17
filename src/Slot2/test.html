@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VietFresh Hub - Shop Profile</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-light">
+
+    <!-- Navbar cơ bản của hệ thống -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-main-theme">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">VietFresh Hub</a>
+            <div class="d-flex align-items-center text-white">
+                <i class="bi bi-cart3 fs-4 me-3"></i>
+                <i class="bi bi-person-circle fs-4"></i>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <!-- 1. Shop Header (FE-03.3 & FE-01.5) -->
+        <div class="card shop-header-card mb-4 border-0 shadow-sm">
+            <div class="card-body d-flex flex-wrap align-items-center p-4">
+                <div class="shop-avatar-wrapper position-relative me-4">
+                    <img src="https://ui-avatars.com/api/?name=Nong+San+Sach&background=28a745&color=fff&size=100" alt="Shop Avatar" class="rounded-circle border border-3 border-white shadow-sm">
+                </div>
+                <div class="shop-info flex-grow-1">
+                    <h4 class="mb-1 fw-bold">Nông Sản Sạch Miền Tây <i class="bi bi-patch-check-fill text-success fs-5"></i></h4>
+                    <p class="text-muted mb-2"><i class="bi bi-clock"></i> Hoạt động 10 phút trước</p>
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-outline-main btn-sm px-3"><i class="bi bi-plus-lg"></i> Theo dõi</button>
+                        <button class="btn btn-main btn-sm px-3"><i class="bi bi-chat-dots"></i> Chat ngay</button>
+                    </div>
+                </div>
+                <div class="shop-stats d-flex gap-4 mt-3 mt-md-0 border-start ps-md-4">
+                    <div class="text-center">
+                        <div class="text-muted small">Sản phẩm</div>
+                        <div class="fw-bold text-main">124</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-muted small">Đánh giá</div>
+                        <div class="fw-bold text-main">4.8 <i class="bi bi-star-fill text-warning small"></i></div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-muted small">Người theo dõi</div>
+                        <div class="fw-bold text-main">15.2k</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Main Content: Filter & Products -->
+        <div class="row">
+            <!-- Sidebar Filter (FE-03.2) -->
+            <div class="col-md-3 mb-4">
+                <div class="card border-0 shadow-sm filter-section">
+                    <div class="card-body">
+                        <h6 class="fw-bold mb-3"><i class="bi bi-funnel"></i> BỘ LỌC TÌM KIẾM</h6>
+                        
+                        <!-- Danh mục -->
+                        <div class="mb-4">
+                            <div class="fw-bold small mb-2">Theo Danh Mục</div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="cat1" checked>
+                                <label class="form-check-label small" for="cat1">Trái cây nhiệt đới</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="cat2">
+                                <label class="form-check-label small" for="cat2">Trái cây nhập khẩu</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="cat3">
+                                <label class="form-check-label small" for="cat3">Trái cây sấy khô</label>
+                            </div>
+                        </div>
+
+                        <!-- Trạng thái/Biến thể -->
+                        <div class="mb-4">
+                            <div class="fw-bold small mb-2">Chứng nhận / Quy cách</div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="var1">
+                                <label class="form-check-label small" for="var1">VietGAP / GlobalGAP</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="var2">
+                                <label class="form-check-label small" for="var2">Hàng loại 1 (Size L)</label>
+                            </div>
+                        </div>
+
+                        <!-- Khoảng giá -->
+                        <div class="mb-3">
+                            <div class="fw-bold small mb-2">Khoảng Giá (VND)</div>
+                            <div class="d-flex align-items-center gap-2">
+                                <input type="number" class="form-control form-control-sm" placeholder="TỪ">
+                                <span>-</span>
+                                <input type="number" class="form-control form-control-sm" placeholder="ĐẾN">
+                            </div>
+                            <button class="btn btn-main btn-sm w-100 mt-2">ÁP DỤNG</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product List & Sorting (FE-03.1 & FE-03.2) -->
+            <div class="col-md-9">
+                <!-- Sorting Bar -->
+                <div class="card border-0 shadow-sm mb-3">
+                    <div class="card-body d-flex align-items-center py-2 px-3 bg-light-gray rounded">
+                        <span class="me-3 small">Sắp xếp theo:</span>
+                        <div class="btn-group gap-2 sort-group" role="group">
+                            <button type="button" class="btn btn-sm btn-main active">Phổ biến</button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary bg-white text-dark border">Mới nhất</button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary bg-white text-dark border">Bán chạy</button>
+                            <select class="form-select form-select-sm border w-auto">
+                                <option>Giá: Từ thấp đến cao</option>
+                                <option>Giá: Từ cao đến thấp</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Grid -->
+                <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3">
+                    <!-- Product Item 1 -->
+                    <div class="col">
+                        <div class="card h-100 product-card border-0 shadow-sm position-relative">
+                            <span class="badge bg-danger position-absolute top-0 end-0 m-2">-15%</span>
+                            <img src="https://images.unsplash.com/photo-1596283749449-74d3204db618?w=300&h=300&fit=crop" class="card-img-top" alt="Sầu riêng">
+                            <div class="card-body p-2 d-flex flex-column">
+                                <h6 class="card-title product-title mb-1">Sầu riêng Ri6 Hạt Lép - Chuẩn VietGAP (Loại 1)</h6>
+                                <div class="mt-auto">
+                                    <div class="text-decoration-line-through text-muted small">150.000đ</div>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="text-main fw-bold">127.500đ <small>/kg</small></span>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center mt-2 small">
+                                        <span class="text-warning"><i class="bi bi-star-fill"></i> 4.9</span>
+                                        <span class="text-muted">Đã bán 1.2k</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-white border-0 p-2 pt-0">
+                                <button class="btn btn-outline-main btn-sm w-100"><i class="bi bi-cart-plus"></i> Thêm vào giỏ</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product Item 2 -->
+                    <div class="col">
+                        <div class="card h-100 product-card border-0 shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?w=300&h=300&fit=crop" class="card-img-top" alt="Xoài cát">
+                            <div class="card-body p-2 d-flex flex-column">
+                                <h6 class="card-title product-title mb-1">Xoài Cát Hòa Lộc Vĩnh Long - Trái Lớn 500g+</h6>
+                                <div class="mt-auto">
+                                    <div class="d-flex justify-content-between align-items-center mt-1">
+                                        <span class="text-main fw-bold">85.000đ <small>/kg</small></span>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center mt-2 small">
+                                        <span class="text-warning"><i class="bi bi-star-fill"></i> 4.8</span>
+                                        <span class="text-muted">Đã bán 850</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-white border-0 p-2 pt-0">
+                                <button class="btn btn-outline-main btn-sm w-100"><i class="bi bi-cart-plus"></i> Thêm vào giỏ</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Item 3 -->
+                    <div class="col">
+                        <div class="card h-100 product-card border-0 shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1528825871115-3581a5387915?w=300&h=300&fit=crop" class="card-img-top" alt="Bơ">
+                            <div class="card-body p-2 d-flex flex-column">
+                                <h6 class="card-title product-title mb-1">Bơ 034 Lâm Đồng Size L (3-4 trái/kg)</h6>
+                                <div class="mt-auto">
+                                    <div class="d-flex justify-content-between align-items-center mt-1">
+                                        <span class="text-main fw-bold">60.000đ <small>/kg</small></span>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center mt-2 small">
+                                        <span class="text-warning"><i class="bi bi-star-fill"></i> 5.0</span>
+                                        <span class="text-muted">Đã bán 500</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-white border-0 p-2 pt-0">
+                                <button class="btn btn-outline-main btn-sm w-100"><i class="bi bi-cart-plus"></i> Thêm vào giỏ</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Có thể copy thêm Product Item để fill đầy Grid -->
+
+                </div>
+
+                <!-- Phân trang (Pagination) -->
+                <nav class="mt-4">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled"><a class="page-link" href="#"><i class="bi bi-chevron-left"></i></a></li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#"><i class="bi bi-chevron-right"></i></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
