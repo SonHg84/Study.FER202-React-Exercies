@@ -1,21 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import Exercise from './Slot1/Ex4/Exercise';
-import ListOfRetail from './Slot1/Ex4/UsingES6&JSX'
+
 import reportWebVitals from './reportWebVitals';
+import App from './App';
 
 
 import FlightBookingForm from './Slot2/Ex8';
-import ReactBootstrapDemo from './Slot2/Ex10';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <>
-  <Exercise/>
-  <ListOfRetail/>
-  <FlightBookingForm/>
-  <ReactBootstrapDemo/>
-  </>
+  // <>
+  // <Exercise/>
+  // <ListOfRetail/>
+  // <FlightBookingForm/>
+  // <ReactBootstrapDemo/>
+  // </>
+  <App></App>
+
 );
 
 // If you want to start measuring performance in your app, pass a function
