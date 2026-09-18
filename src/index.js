@@ -7,12 +7,14 @@ import reportWebVitals from './reportWebVitals';
 
 
 import FlightBookingForm from './Slot2/Ex8';
+import ReactBootstrapDemo from './Slot2/Ex10';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
   <Exercise/>
   <ListOfRetail/>
   <FlightBookingForm/>
+  <ReactBootstrapDemo/>
   </>
 );
 
